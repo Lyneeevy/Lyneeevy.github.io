@@ -41,12 +41,19 @@
         left: 0;
         z-index: -50;
       }
+
+      .navigation {
+        font-size: 30px;
+      }
       @media (max-width: 480px) {
         .background {
           background-image: url("./photos/background-mobile.jpg");
         }
         h1{
           font-size: 24px;
+        }
+        .navigation {
+          font-size: 20px;
         }
       }
       @media (min-width: 481px) and (max-width: 1024px) {
@@ -70,7 +77,6 @@
         background-color: #b83030;
         color: white;
         text-align: center;
-        font-size: 30px;
         text-decoration: none;
         font-family: 'Roboto';
         border-right: 1px solid #bbb;
@@ -136,13 +142,13 @@
     </h1>
 
     <nav>
-      <ul>
+      <ul class="navigation">
         <li class="dropdown"><a href="#americain" onclick="show('americain');">Américain</a>
           <ul class="menuDropdown">
             <li><a href="#peruvien">Péruvien</a></li>
           </ul>
         </li>
-        <li><a href="#asiatique" onclick="show('asiatique');">Asiatique</a></li>
+        <li class="dropdown"><a href="#asiatique" onclick="show('asiatique');">Asiatique</a></li>
          <li><a href="#europeen" onclick="show('europeen');">Européen</a></li>
          <li><a href="#fusion" onclick="show('fusion');">Fusion</a></li>
       </ul>
