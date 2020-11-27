@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <title>Les bonnes adresses d'Evy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body{
+        position: relative;
+        margin: 0;
+      }
+      .background {
+        height: 100vh;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: opacity(0.6);
+        z-index: -50;
+      }
+      h1{
+        font-size:60px;
+        color:white;
+        text-align: left;
+        margin: 0;
+        font-family: 'Parisienne';
+        color: #b83030;
+        }
+      .backgroundh1 {
+        filter: opacity(0.6);
+        position: fixed;
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -50;
+      }
+      @media (max-width: 480px) {
+        .background {
+          background-image: url("./photos/background-mobile.jpg");
+        }
+        h1{
+          font-size: 24px;
+        }
+      }
+      @media (min-width: 481px) and (max-width: 1024px) {
+        .background{
+          background-image: url("./photos/background-tablet.jpg");
+        }
+      }
+      @media (min-width: 1025px) {
+        .background{
+          background-image: url("./photos/background-desktop.jpg");
+        }
+      }
+      li {
+        display: inline;
+        flex: 1;
+        text-align: center;
+      }
+      li a {
+        display: block;
+        padding: 20px 0;
+        background-color: #b83030;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        text-decoration: none;
+        font-family: 'Roboto';
+        border-right: 1px solid #bbb;
+      }
+
+      li a:hover {
+        opacity: 0.7;
+      }
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 0;
+      }
+      h2 {
+        text-align: center;
+        font-family: "Roboto";
+      }
+      p {
+        text-align: center;
+        font-size: 15px;
+        font-family: 'Roboto';
+      }
+      img {
+        width: 100%;
+        box-sizing: border-box;
+        border-right: 1px solid #bbb;
+      }
+      .legend {
+        font-size: 15px;
+        font-family: 'Roboto';
+      }
+      p a:link {
+        color: #b83030;
+      }
+      p a:visited {
+        color: #1b8360;
+      }
+      p a:hover {
+        opacity: 0.7;
+      }
+      .menuDropdown {
+        display: none;
+        position: absolute;
+        width: 100%;
+      }
+      .dropdown {
+        position: relative;
+      }
+      .dropdown:hover .menuDropdown {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="background"></div>
+
+    <h1>
+      <div class="backgroundh1"> </div>
+      Les bonnes adresses d'Evy &#127836;
+    </h1>
+
+    <nav>
+      <ul>
+        <li class="dropdown"><a href="#americain" onclick="show('americain');">Américain</a>
+          <ul class="menuDropdown">
+            <li><a href="#peruvien">Péruvien</a></li>
+          </ul>
+        </li>
+        <li><a href="#asiatique" onclick="show('asiatique');">Asiatique</a></li>
+         <li><a href="#europeen" onclick="show('europeen');">Européen</a></li>
+         <li><a href="#fusion" onclick="show('fusion');">Fusion</a></li>
+      </ul>
+    </nav>
+
+    <div id="americain">
+      <h2>El Picaflor</h2>
+      <p><i>Restaurant péruvien</i></p>
+      <p>9 Rue Lacépède, 75005 Paris<br>
+        <a href="tel:+33143310601">01 43 31 06 01</a></p>
+      <p><a href="https://www.picaflor.fr/">www.picaflor.fr</a></p>
+      <p>
+        lundi fermé<br>
+        mardi 17:30–20:30<br>
+        mercredi 17:30–20:30<br>
+        jeudi 17:30–20:30<br>
+        vendredi 17:30–20:30<br>
+        samedi 12:00–14:30 17:30–20:30<br>
+        dimanche 12:00–14:30<br>
+      </p>
+      <ul>
+        <li><img src="./photos/elpicaflor1.jpg"><i class="legend">Aji de gallina, Seco de cordero, Ceviche de pato<br>Ceviche clasico, Ceviche nikkei, Tiradito clasico</i></li>
+        <li><img src="./photos/elpicaflor2.jpg"><i class="legend">Anticuchos</i></li>
+      </ul>
+    </div>  
+    
+    <div id="asiatique">
+      <h2>La cantine chinoise</h2>
+      <p><i>Restaurant chinois</i></p>
+      <p>16 Rue de Belleville, 75020 Paris<br>
+        <a href="tel:+33147977001">01 47 97 70 01</a></p>
+      <p><a href="https://www.lacantinechinoise.fr/?lang=fr">www.lacantinechinoise.fr</a></p>
+      <p>
+        lundi 11:30–22:00<br>
+        mardi fermé<br>
+        mercredi 11:30–22:00<br>
+        jeudi 11:30–22:00<br>
+        vendredi 11:30–22:00<br>
+        samedi 11:30–22:00<br>
+        dimanche 11:30–22:00<br>
+      </p>
+      <ul>
+        <li><img src="./photos/lacantinechinoise1.jpg"><i class="legend">Enoki à l'ail</i></li>
+        <li><img src="./photos/lacantinechinoise2.jpg"><i class="legend">Samoussas</i></li>
+        <li><img src="./photos/lacantinechinoise3.jpg"><i class="legend">Aubergines</i></li>
+        <li><img src="./photos/lacantinechinoise4.jpg"><i class="legend">Jipai<br>Zhuchang</i></li>
+      </ul>
+    </div>  
+
+    <div id="fusion">
+      <h2>Tomo</h2>
+      <p><i>Salon de thé franco-japonais</i></p>
+      <p>11 Rue Chabanais, 75002 Paris<br>
+      <p><a href="https://patisserietomo.fr/">www.patisserietomo.fr</a></p>
+      <p>
+        lundi 12:00–19:00<br>
+        mardi 12:00–19:00<br>
+        mercredi 12:00–19:00<br>
+        jeudi 12:00–19:00<br>
+        vendredi 12:00–19:00<br>
+        samedi 12:00–19:00<br>
+        dimanche 12:00–19:00<br>
+      </p>
+      <ul>
+        <li><img src="./photos/tomo1.jpg"><i class="legend">Baba au whisky japonais<br>Chocolat chaud Houjicha<br>Chocolat chaud Soba<br>Matcha daifuku</i></li>
+        <li><img src="./photos/tomo2.jpg"><i class="legend">Dorayaki classique à la fleur de sel de Wajima</i></li>
+      </ul>
+    </div> 
+
+    <div id="asiatique">
+      <h2>T’Xuan 糖轩</h2>
+      <p><i>Salon de thé chinois</i></p>
+      <p>56 Rue la Fayette, 75009 Paris<br>
+        <a href="tel:+33608026072">06 08 02 60 72</a></p>
+      <p><a href="https://txuanparis.com/">www.txuanparis.com</a></p>
+      <p>
+        lundi fermé<br>
+        mardi 12:30–21:00<br>
+        mercredi 12:30–21:00<br>
+        jeudi 12:30–21:00<br>
+        vendredi 12:30–21:00<br>
+        samedi 12:30–21:00<br>
+        dimanche 12:30–21:00<br>
+      </p>
+      <ul>
+        <li><img src="./photos/txuan.jpg"><i class="legend">Coussin de crêpe au durian<br>Mille-feuille de crêpe au litchi<br>Panna cotta au matcha</i></li>
+      </ul>
+    </div> 
+
+  </body>
+
+  <script>
+    var divs = ["americain", "asiatique", "europeen", "fusion"];
+    var visibleId = null;
+    function show(id) {
+      if(visibleId !== id) {
+        visibleId = id;
+      } 
+      hide();
+    }
+    function hide() {
+      var div, i, id;
+      for(i = 0; i < divs.length; i++) {
+        id = divs[i];
+        div = document.getElementById(id);
+        if(visibleId === id) {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
+      }
+    }  
+ </script>
+</html>
