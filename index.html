@@ -139,6 +139,12 @@
         display: flex;
         justify-content: center;
       }
+      .hidden {
+        display: none;
+      }
+      .show {
+        display: contents;
+      }
       @media (max-width: 480px) {
         .background {
           background-image: url("./photos/background-mobile.jpg");
@@ -169,7 +175,7 @@
           background-image: url("./photos/background-desktop.jpg");
         }
       }
-    </style>
+          </style>
   </head>
 
   <body>
@@ -195,12 +201,12 @@
         </li>
         <li class="dropdown navigationItem">Européen
           <ul class="menuDropdown">
-            <li class="navigationItem"><a onclick="hideRestaurantsNot('europeen');">Français</a></li>
+            <li class="navigationItem"><a onclick="hideRestaurantsNot('francais');">Français</a></li>
           </ul>
         </li> 
         <li class="dropdown navigationItem">Fusion
           <ul class="menuDropdown">
-            <li class="navigationItem"><a onclick="hideRestaurantsNot('fusion');">Franco-japonais</a></li>
+            <li class="navigationItem"><a onclick="hideRestaurantsNot('francoJaponais');">Franco-japonais</a></li>
           </ul>
          </li> 
       </ul>
@@ -209,8 +215,8 @@
     <div class="restaurant peruvien">
       <h2>El Picaflor</h2>
       <p><i>Restaurant péruvien</i></p>
-      <p>9 Rue Lacépède, 75005 Paris<br>
-        <a href="tel:+33143310601">01 43 31 06 01</a></p>
+      <p><a href="https://www.google.com/maps/place/El+Picaflor/@48.843643,2.3512683,17z/data=!3m1!4b1!4m5!3m4!1s0x47e671efcbe9059d:0x3537bd09ae98a7f5!8m2!3d48.843643!4d2.353457">9 Rue Lacépède, 75005 Paris</a></p>
+      <p><a href="tel:+33143310601">01 43 31 06 01</a></p>
       <p><a href="https://www.picaflor.fr/">www.picaflor.fr</a></p>
       <div class="timetable">
         <table>
@@ -247,14 +253,15 @@
       <ul>
         <li><img src="./photos/elpicaflor1.jpg"><i class="legend">Aji de gallina, Seco de cordero, Ceviche de pato<br>Ceviche clasico, Ceviche nikkei, Tiradito clasico</i></li>
         <li><img src="./photos/elpicaflor2.jpg"><i class="legend">Anticuchos</i></li>
+        <li><img src="./photos/elpicaflor3.jpg"><i class="legend">Pulpo a la parrilla</i></li>
       </ul>
     </div>  
     
     <div class="restaurant chinois">
       <h2>La cantine chinoise</h2>
       <p><i>Restaurant chinois</i></p>
-      <p>16 Rue de Belleville, 75020 Paris<br>
-        <a href="tel:+33147977001">01 47 97 70 01</a></p>
+      <p><a href="https://www.google.com/maps/place/WENZHOU+La+Cantine+Chinoise%F0%9F%A5%A2%E6%B8%A9%E5%B7%9E%E7%BE%8E%E9%A3%9F%E6%9E%97/@48.8724576,2.3766833,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66de625495555:0x425787f6af64680a!8m2!3d48.8724576!4d2.378872">16 Rue de Belleville, 75020 Paris</a></p>
+      <p><a href="tel:+33147977001">01 47 97 70 01</a></p>
       <p><a href="https://www.lacantinechinoise.fr/?lang=fr">www.lacantinechinoise.fr</a></p>
       <div class="timetable">
         <table>
@@ -296,10 +303,10 @@
       </ul>
     </div>  
 
-    <div class="restaurant franco-japonais">
+    <div class="restaurant francoJaponais">
       <h2>Tomo</h2>
       <p><i>Salon de thé franco-japonais</i></p>
-      <p>11 Rue Chabanais, 75002 Paris<br>
+      <p><a href="https://www.google.com/maps/place/Tomo/@48.8676336,2.3346615,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e3adfbb65db:0xb689df43c1de4766!8m2!3d48.8676336!4d2.3368502">11 Rue Chabanais, 75002 Paris</a></p>
       <p><a href="https://patisserietomo.fr/">www.patisserietomo.fr</a></p>
       <div class="timetable">
         <table>
@@ -342,8 +349,8 @@
     <div class="restaurant chinois">
       <h2>T’Xuan 糖轩</h2>
       <p><i>Salon de thé chinois</i></p>
-      <p>56 Rue la Fayette, 75009 Paris<br>
-        <a href="tel:+33608026072">06 08 02 60 72</a></p>
+      <p><a href="https://www.google.com/maps/place/T%E2%80%99Xuan%E7%B3%96%E8%BD%A9/@48.8752641,2.3399919,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e3f71c5ffd5:0xec454ed98cb1a456!8m2!3d48.8752641!4d2.3421806">56 Rue la Fayette, 75009 Paris</a></p>
+      <p><a href="tel:+33608026072">06 08 02 60 72</a></p>
       <p><a href="https://txuanparis.com/">www.txuanparis.com</a></p>
       <div class="timetable">
         <table>
@@ -385,12 +392,23 @@
   </body>
 
   <script>
-
 function hideRestaurantsNot(className) {
-  console.log(className);
-  var restaurantsAsiatiques= document.getElementsByClassName(className);
-  var restaurants= document.getElementsByClassName("restaurant");
-  console.log(restaurants);
+  // Masquer tous les restaurants non className
+
+  // Masquer tous les restaurants
+  var restaurants = document.getElementsByClassName("restaurant");
+  var i;
+  for (i = 0; i <restaurants.length; i++) {
+    restaurants[i].classList.add("hidden");
+    restaurants[i].classList.remove("show");
+  }
+
+  // Afficher les restaurants className
+  var restaurantsSelectionnes = document.getElementsByClassName(className);
+  var i;
+  for (i = 0; i <restaurantsSelectionnes.length; i++) {
+    restaurantsSelectionnes[i].classList.add("show");
+  }
 }
  </script>
 </html>
