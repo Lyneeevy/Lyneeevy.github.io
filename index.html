@@ -152,8 +152,8 @@
       }
       #scrollToTop {
         position: fixed;
-        width: 50px;
-        height: 50px;
+        width: 35px;
+        height: 35px;
         bottom: 10px;
         right: 10px;
         opacity: 0.7;
@@ -163,7 +163,11 @@
       .imageList li:last-child img {
         border-right: none;
       }
-
+      .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
       @media (max-width: 480px) {
         .background {
           background-image: url("./photos/background-mobile.jpg");
@@ -206,7 +210,7 @@
       Les bonnes adresses d'Evy &#127836;
     </h1>
 
-    <nav>
+    <nav id="navbar">
       <ul class="navigation">
         <li class="dropdown navigationItem">Américain
           <ul class="menuDropdown">
@@ -435,7 +439,7 @@ function hideRestaurantsNot(className) {
   }
 }
 
-//Get the button
+//Get the button scrollToTop
 var mybutton = document.getElementById("scrollToTop");
 
 // When the user scrolls down 20px from the top of the document, show the button
@@ -453,6 +457,20 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+
+// Sticky nav bar
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
 }
 
  </script>
