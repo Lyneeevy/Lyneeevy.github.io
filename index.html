@@ -104,11 +104,13 @@
         opacity: 0.7;
       }
       .menuDropdown {
-        display: none;
         position: absolute;
         width: 100%;
         top: 100%;
         left: 0;
+        opacity: 0;
+        transition: all 250ms ease;
+        cursor: pointer;
       }
       .menuDropdown .navigationItem {
         height: 0px;
@@ -121,6 +123,9 @@
         color: black;
         border-right: black;
         transition: all 250ms ease;
+      }
+      .navigationItem:hover .menuDropdown {
+        opacity: 1;
       }
       .navigationItem:hover .menuDropdown .navigationItem {
         height: 50px;
@@ -144,6 +149,22 @@
       }
       .show {
         display: contents;
+      }
+      #scrollToTop {
+        position: fixed;
+        width: 25px;
+        height: 25px;
+        bottom: 50px;
+        right: 30px;
+        opacity: 0.7;
+      }
+      #scrollToTop img {
+        width: 50px;
+        border-right: none;
+        ;
+      }
+      .imageList li:last-child img {
+        border-right: none;
       }
       @media (max-width: 480px) {
         .background {
@@ -212,6 +233,10 @@
       </ul>
     </nav>
 
+    <div id="scrollToTop">
+      <a href="#top"><img src="./photos/to_top.png" alt="Retourner en haut"></a>
+    </div>
+
     <div class="restaurant peruvien">
       <h2>El Picaflor</h2>
       <p><i>Restaurant péruvien</i></p>
@@ -250,7 +275,7 @@
         </tr>
       </table>
     </div>
-      <ul>
+      <ul class="imageList">
         <li><img src="./photos/elpicaflor1.jpg"><i class="legend">Aji de gallina, Seco de cordero, Ceviche de pato<br>Ceviche clasico, Ceviche nikkei, Tiradito clasico</i></li>
         <li><img src="./photos/elpicaflor2.jpg"><i class="legend">Anticuchos</i></li>
         <li><img src="./photos/elpicaflor3.jpg"><i class="legend">Pulpo a la parrilla</i></li>
