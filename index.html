@@ -152,20 +152,18 @@
       }
       #scrollToTop {
         position: fixed;
-        width: 25px;
-        height: 25px;
-        bottom: 50px;
-        right: 30px;
-        opacity: 0.7;
-      }
-      #scrollToTop img {
         width: 50px;
+        height: 50px;
+        bottom: 10px;
+        right: 10px;
+        opacity: 0.7;
+        display: none;
         border-right: none;
-        ;
       }
       .imageList li:last-child img {
         border-right: none;
       }
+
       @media (max-width: 480px) {
         .background {
           background-image: url("./photos/background-mobile.jpg");
@@ -234,7 +232,7 @@
     </nav>
 
     <div>
-      <a href="#top"><img src="./photos/to_top.png" alt="Retourner en haut" onclick="topFunction()" id="scrollToTop" title="Go to top"></a>
+      <img src="./photos/to_top.png" alt="Go to top" onclick="topFunction()" id="scrollToTop" title="Go to top">
     </div>
 
     <div class="restaurant peruvien">
