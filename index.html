@@ -23,19 +23,19 @@
         filter: opacity(0.6);
         z-index: -50;
       }
-      h1{
+      h1 {
         font-size:60px;
         color:white;
-        text-align: left;
+        text-align: center;
         margin: 0;
         padding: 0;
-        padding-left: 30px;
         height: 200px;
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
         font-family: 'Parisienne';
         color: #b83030;
+        background-color: rgb(48, 46, 46);
         }
       .backgroundh1 {
         filter: opacity(0.6);
@@ -65,7 +65,7 @@
       .navigationItem {
         display: block;
         padding: 10px 0;
-        background-color: #b83030;
+        background-color: rgb(48, 46, 46);
         color: white;
         text-align: center;
         text-decoration: none;
@@ -73,7 +73,7 @@
         border-right: 1px solid #bbb;
       }
       .navigationItem:hover {
-        background-color: black;
+        background-color: #b83030;
         transition: all 250ms ease;
       }
       ul {
@@ -95,6 +95,7 @@
         width: 100%;
         box-sizing: border-box;
         border-right: 1px solid #bbb;
+        border-left: 1px solid #bbb;
       }
       .legend {
         font-size: 15px;
@@ -127,8 +128,8 @@
         justify-content: center;
         background-color: white;
         color: black;
-        border-right: black;
         transition: all 250ms ease;
+        box-shadow: 0px 0px 5px black;
       }
       .navigationItem:hover .menuDropdown {
         opacity: 1;
@@ -137,7 +138,7 @@
         height: 50px;
       }
       .menuDropdown .navigationItem:hover {
-       background-color: rgb(168, 168, 168);
+       background-color: rgb(194, 193, 193);
        color: white;
       }
       .dropdown {
@@ -170,9 +171,7 @@
       }
       #scrollToTop img {
         border-right: none;
-      }
-      .imageList li:last-child img {
-        border-right: none;
+        border-left: none;
       }
       .sticky {
         position: fixed;
@@ -191,6 +190,7 @@
       }
       .home img {
           border-right: none;
+          border-left: none;
           fill: white;
           height: 45px;
           width: 45px;
@@ -207,10 +207,7 @@
          height: 60px;
        }
       @media (max-width: 480px) {
-        .background {
-          background-image: url("https://res.cloudinary.com/dvpcjyb48/image/upload/c_scale,w_480/v1606652850/background-desktop_ni9ifb.jpg");
-        }
-        h1{
+        h1 {
           font-size: 30px;
           height: 100px;
         }
@@ -241,16 +238,6 @@
         padding: 10px 0;
        }
       }
-      @media (min-width: 481px) and (max-width: 1024px) {
-        .background {
-          background-image: url("https://res.cloudinary.com/dvpcjyb48/image/upload/c_scale,w_1024/v1606652850/background-desktop_ni9ifb.jpg");
-        }
-      }
-      @media (min-width: 1025px) {
-        .background {
-          background-image: url("https://res.cloudinary.com/dvpcjyb48/image/upload/v1606652850/background-desktop_ni9ifb.jpg");
-        }
-      }
       </style>
   </head>
 
@@ -260,7 +247,8 @@
 
     <h1>
       <div class="backgroundh1"> </div>
-      Les bonnes adresses d'Evy &#127836;
+      Les bonnes adresses d'Evy<br>
+      &#127836;
     </h1>
 
     <div id="navBarPlaceHolder" class="navBarPlaceHolder">
@@ -338,7 +326,7 @@
         </tr>
       </table>
     </div>
-      <ul class="imageList">
+      <ul>
         <li><img src="https://res.cloudinary.com/dvpcjyb48/image/upload/v1606652849/elpicaflor1_osdk3k.jpg"><i class="legend">Aji de gallina, Seco de cordero, Ceviche de pato<br>Ceviche clasico, Ceviche nikkei, Tiradito clasico</i></li>
         <li><img src="https://res.cloudinary.com/dvpcjyb48/image/upload/v1606652849/elpicaflor2_pqlmpq.jpg"><i class="legend">Anticuchos</i></li>
         <li><img src="https://res.cloudinary.com/dvpcjyb48/image/upload/v1606652849/elpicaflor3_r69mys.jpg"><i class="legend">Pulpo a la parrilla</i></li>
