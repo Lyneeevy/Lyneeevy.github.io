@@ -47,6 +47,12 @@
         left: 0;
         z-index: -50;
       }
+      .navBar {
+        box-shadow : 0px 0px 0px black;
+        transition: all 250ms ease;
+        position: absolute;
+        width: 100%;
+      }
       .navigation {
         font-size: 30px;
         margin: 0px;
@@ -58,7 +64,7 @@
       }
       .navigationItem {
         display: block;
-        padding: 20px 0;
+        padding: 10px 0;
         background-color: #b83030;
         color: white;
         text-align: center;
@@ -156,9 +162,10 @@
         height: 35px;
         bottom: 10px;
         right: 10px;
-        opacity: 0.7;
+        opacity: 0.5;
         display: none;
         border-right: none;
+        cursor: pointer;
       }
       .imageList li:last-child img {
         border-right: none;
@@ -167,7 +174,34 @@
         position: fixed;
         top: 0;
         width: 100%;
+        box-shadow: 0px 0px 20px black;
       }
+      .home {
+        width: 59px;
+        height: 40px;
+        flex: none;
+        padding: 10px 0;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+      .home img {
+          border-right: none;
+          fill: white;
+          height: 45px;
+          width: 45px;
+       }
+       .allAddresses {
+         width: auto;
+       }
+       .allAddresses .navigationItem{
+         width: max-content;
+         padding: 10px 10px;
+       }
+       .navBarPlaceHolder {
+         position: relative;
+         height: 60px;
+       }
       @media (max-width: 480px) {
         .background {
           background-image: url("./photos/background-mobile.jpg");
@@ -179,26 +213,37 @@
         .navigation {
           font-size: 16px;
         }
-        .navigationItem {
-          padding: 10px;
-        }
         .menuDropdown .navigationItem {
           height: 20px;
           padding: 5px;
           font-size: 15px;
         } 
+        .navigationItem {
+          height: 20px;
+        }
+        .home {
+          width: 39px;
+        }
+        .home img {
+          height: 25px;
+          width: 25px;
+       }
+       .navBarPlaceHolder {
+         position: relative;
+         height: 40px;
+       }
       }
       @media (min-width: 481px) and (max-width: 1024px) {
-        .background{
+        .background {
           background-image: url("./photos/background-tablet.jpg");
         }
       }
       @media (min-width: 1025px) {
-        .background{
+        .background {
           background-image: url("./photos/background-desktop.jpg");
         }
       }
-          </style>
+      </style>
   </head>
 
   <body>
@@ -210,33 +255,41 @@
       Les bonnes adresses d'Evy &#127836;
     </h1>
 
-    <nav id="navbar">
-      <ul class="navigation">
-        <li class="dropdown navigationItem">Américain
-          <ul class="menuDropdown">
-            <li class="navigationItem"><a onclick="hideRestaurantsNot('peruvien');">Péruvien</a></li>
-          </ul>
-        </li>
-        <li class="dropdown navigationItem">Asiatique
-          <ul class="menuDropdown">
-            <li class="navigationItem"><a onclick="hideRestaurantsNot('chinois');">Chinois</a></li>
-          </ul>
-        </li>
-        <li class="dropdown navigationItem">Européen
-          <ul class="menuDropdown">
-            <li class="navigationItem"><a onclick="hideRestaurantsNot('francais');">Français</a></li>
-          </ul>
-        </li> 
-        <li class="dropdown navigationItem">Fusion
-          <ul class="menuDropdown">
-            <li class="navigationItem"><a onclick="hideRestaurantsNot('francoJaponais');">Franco-japonais</a></li>
-          </ul>
-         </li> 
-      </ul>
-    </nav>
+    <div id="navBarPlaceHolder" class="navBarPlaceHolder">
+      <nav id="navBar" class="navBar">
+        <ul class="navigation">
+          <li class="dropdown navigationItem home">
+            <img src="./photos/home-24px.svg" alt="Accueil">
+            <ul class="menuDropdown allAddresses">
+              <li class="navigationItem" onclick="showAllRestaurants();">Toutes les adresses</li>
+            </ul>
+          </li>
+          <li class="dropdown navigationItem">Américain
+            <ul class="menuDropdown">
+              <li class="navigationItem" onclick="hideRestaurantsNot('peruvien');">Péruvien</li>
+            </ul>
+          </li>
+          <li class="dropdown navigationItem">Asiatique
+            <ul class="menuDropdown">
+              <li class="navigationItem" onclick="hideRestaurantsNot('chinois');">Chinois</li>
+            </ul>
+          </li>
+          <li class="dropdown navigationItem">Européen
+            <ul class="menuDropdown">
+              <li class="navigationItem" onclick="hideRestaurantsNot('francais');">Français</li>
+            </ul>
+          </li> 
+          <li class="dropdown navigationItem">Fusion
+            <ul class="menuDropdown">
+              <li class="navigationItem" onclick="hideRestaurantsNot('francoJaponais');">Franco-japonais</li>
+            </ul>
+          </li> 
+        </ul>
+      </nav>
+    </div>
 
-    <div>
-      <img src="./photos/to_top.png" alt="Go to top" onclick="topFunction()" id="scrollToTop" title="Go to top">
+    <div id="scrollToTop" >
+      <img src="./photos/to_top.png" alt="Retour vers le haut" onclick="scrollToTop()" title="Retour vers le haut">
     </div>
 
     <div class="restaurant peruvien">
@@ -440,36 +493,47 @@ function hideRestaurantsNot(className) {
 }
 
 //Get the button scrollToTop
-var mybutton = document.getElementById("scrollToTop");
+var scrollToTopButton = document.getElementById("scrollToTop");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
+function scrollToTopButtonDisplay() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
+    scrollToTopButton.style.display = "block";
   } else {
-    mybutton.style.display = "none";
+    scrollToTopButton.style.display = "none";
   }
 }
 
 // When the user clicks on the button, scroll to the top of the document
-function topFunction() {
+function scrollToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
-// Sticky nav bar
-window.onscroll = function() {myFunction()};
-
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
+var navBarPlaceHolder = document.getElementById("navBarPlaceHolder");
+var sticky = navBarPlaceHolder.offsetTop;
+var navBar = document.getElementById("navBar");
+console.log(sticky)
+function stickNavbarToTop() {
   if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
+    navBar.classList.add("sticky")
   } else {
-    navbar.classList.remove("sticky");
+    navBar.classList.remove("sticky");
+  }
+}
+
+window.onscroll = function() {
+  scrollToTopButtonDisplay();
+  stickNavbarToTop();
+}
+
+function showAllRestaurants(className) {
+  
+  var allRestaurants = document.getElementsByClassName("restaurant");
+  var i;
+  for (i = 0; i <allRestaurants.length; i++) {
+    allRestaurants[i].classList.add("show");
   }
 }
 
