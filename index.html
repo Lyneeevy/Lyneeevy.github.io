@@ -160,12 +160,16 @@
         position: fixed;
         width: 35px;
         height: 35px;
-        bottom: 10px;
+        bottom: -50px;
         right: 10px;
         opacity: 0.5;
-        display: none;
+        /* display: none; */
         border-right: none;
         cursor: pointer;
+        transition: all 250ms ease;
+      }
+      #scrollToTop img {
+        border-right: none;
       }
       .imageList li:last-child img {
         border-right: none;
@@ -231,6 +235,10 @@
        .navBarPlaceHolder {
          position: relative;
          height: 40px;
+       }
+       .navigationItem:hover .menuDropdown .navigationItem {
+        height: 20px;
+        padding: 10px 0;
        }
       }
       @media (min-width: 481px) and (max-width: 1024px) {
@@ -499,16 +507,20 @@ var scrollToTopButton = document.getElementById("scrollToTop");
 
 function scrollToTopButtonDisplay() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    scrollToTopButton.style.display = "block";
+    scrollToTopButton.style.bottom = "10px";
   } else {
-    scrollToTopButton.style.display = "none";
+    scrollToTopButton.style.bottom = "-50px";
   }
 }
 
 // When the user clicks on the button, scroll to the top of the document
 function scrollToTop() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+// document.body.scrollTop = 0;
+// document.documentElement.scrollTop = 0;
+  window.scrollTo({
+    top : 0,
+    behavior : "smooth"
+  })
 }
 
 var navBarPlaceHolder = document.getElementById("navBarPlaceHolder");
