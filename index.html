@@ -71,6 +71,7 @@
         text-decoration: none;
         font-family: 'Roboto';
         border-right: 1px solid #bbb;
+        border-left: 1px solid #bbb;
       }
       .navigationItem:hover {
         background-color: #b83030;
@@ -255,29 +256,33 @@
       <nav id="navBar" class="navBar">
         <ul class="navigation">
           <li class="dropdown navigationItem home">
-            <img src="https://res.cloudinary.com/dvpcjyb48/image/upload/v1606652849/home-24px_qb2ojc.svg" alt="Accueil">
-            <ul class="menuDropdown allAddresses">
-              <li class="navigationItem" onclick="showAllRestaurants();">Toutes les adresses</li>
+            <img src="https://res.cloudinary.com/dvpcjyb48/image/upload/v1606652849/home-24px_qb2ojc.svg" alt="Accueil" onclick="showMenuDropdown('home')">
+            <ul class="menuDropdown allAddresses" id="home" style="display: none;">
+              <li class="navigationItem" id="toutesLesAdresses" onclick="showAllRestaurants('home');">Toutes les adresses</li>
             </ul>
           </li>
-          <li class="dropdown navigationItem">Américain
-            <ul class="menuDropdown">
-              <li class="navigationItem" onclick="hideRestaurantsNot('peruvien');">Péruvien</li>
+          <li class="dropdown navigationItem">
+            <span onclick="showMenuDropdown('americain')">Américain</span>
+            <ul class="menuDropdown" id="americain" style="display: none;">
+              <li class="navigationItem" id="peruvien" onclick="hideRestaurantsNotAndHideNavigationItem('peruvien','americain');">Péruvien</li>
             </ul>
           </li>
-          <li class="dropdown navigationItem">Asiatique
-            <ul class="menuDropdown">
-              <li class="navigationItem" onclick="hideRestaurantsNot('chinois');">Chinois</li>
+          <li class="dropdown navigationItem">
+            <span onclick="showMenuDropdown('asiatique')">Asiatique</span>
+            <ul class="menuDropdown" id="asiatique" style="display: none;">
+              <li class="navigationItem" id="chinois" onclick="hideRestaurantsNotAndHideNavigationItem('chinois','asiatique');">Chinois</li>
             </ul>
           </li>
-          <li class="dropdown navigationItem">Européen
-            <ul class="menuDropdown">
-              <li class="navigationItem" onclick="hideRestaurantsNot('francais');">Français</li>
+          <li class="dropdown navigationItem">
+            <span onclick="showMenuDropdown('europeen')">Européen</span>
+            <ul class="menuDropdown" id="europeen" style="display: none;">
+              <li class="navigationItem" id="francais" onclick="hideRestaurantsNotAndHideNavigationItem('francais','europeen')">Français</li>
             </ul>
           </li> 
-          <li class="dropdown navigationItem">Fusion
-            <ul class="menuDropdown">
-              <li class="navigationItem" onclick="hideRestaurantsNot('francoJaponais');">Franco-japonais</li>
+          <li class="dropdown navigationItem">
+            <span onclick="showMenuDropdown('fusion')">Fusion</span>
+            <ul class="menuDropdown" id="fusion" style="display: none;">
+              <li class="navigationItem" id="francoJaponais" onclick="hideRestaurantsNotAndHideNavigationItem('francoJaponais','fusion');">Franco-japonais</li>
             </ul>
           </li> 
         </ul>
@@ -469,8 +474,8 @@
 
   <script>
 
-function hideRestaurantsNot(className) {
   // Masquer tous les restaurants non className
+function hideRestaurantsNot(className) {
 
   // Masquer tous les restaurants
   var restaurants = document.getElementsByClassName("restaurant");
@@ -514,7 +519,7 @@ function scrollToTop() {
 var navBarPlaceHolder = document.getElementById("navBarPlaceHolder");
 var sticky = navBarPlaceHolder.offsetTop;
 var navBar = document.getElementById("navBar");
-console.log(sticky)
+
 function stickNavbarToTop() {
   if (window.pageYOffset >= sticky) {
     navBar.classList.add("sticky")
@@ -528,13 +533,33 @@ window.onscroll = function() {
   stickNavbarToTop();
 }
 
-function showAllRestaurants(className) {
+function showAllRestaurants(id) {
   
   var allRestaurants = document.getElementsByClassName("restaurant");
   var i;
   for (i = 0; i <allRestaurants.length; i++) {
     allRestaurants[i].classList.add("show");
   }
+  hideMenuDropdown(id);
+}
+
+function hideMenuDropdown(id) {
+// Cache le navigation item dans le dropdown quand on clique sur l'id
+  var menuDropdown = document.getElementById(id);
+
+  menuDropdown.style.display = "none";
+}
+
+function showMenuDropdown(id) {
+// Affiche le menu dropwdown quand on clique sur le dropdown toggler
+  var menuDropdown = document.getElementById(id);
+
+  menuDropdown.style.display = "block";
+}
+
+function hideRestaurantsNotAndHideNavigationItem(className,id) {
+  hideRestaurantsNot(className);
+  hideMenuDropdown(id);
 }
 
  </script>
