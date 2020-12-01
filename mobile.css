@@ -1,0 +1,37 @@
+@media (max-width: 480px) {
+  .header {
+    height: 100px;
+  }
+  .header .title {
+    font-size: 30px;
+  }
+  .header .logo  {
+    font-size: 30px;
+  }
+  .navigation {
+    font-size: 16px;
+  }
+  .menuDropdown .navigationItem {
+    height: 20px;
+    padding: 5px;
+    font-size: 15px;
+  } 
+  .navigationItem {
+    height: 20px;
+  }
+  .home {
+    width: 39px;
+  }
+  .home img {
+    height: 25px;
+    width: 25px;
+ }
+ .navBarPlaceHolder {
+   position: relative;
+   height: 40px;
+ }
+ .navigationItem:hover .menuDropdown .navigationItem {
+  height: 20px;
+  padding: 10px 0;
+ }
+}

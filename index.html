@@ -3,59 +3,13 @@
   <head>
     <link href='https://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="mobile.css">
     <title>Les bonnes adresses d'Evy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-      body{
-        position: relative;
+      body {
         margin: 0;
-      }
-      .background {
-        height: 100vh;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        background-position: center center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-        filter: opacity(0.6);
-        z-index: -50;
-      }
-      h1 {
-        font-size:60px;
-        color:white;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Parisienne';
-        color: #b83030;
-        background-color: rgb(48, 46, 46);
-        }
-      .backgroundh1 {
-        filter: opacity(0.6);
-        position: fixed;
-        background-color: white;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: -50;
-      }
-      .navBar {
-        box-shadow : 0px 0px 0px black;
-        transition: all 250ms ease;
-        position: absolute;
-        width: 100%;
-      }
-      .navigation {
-        font-size: 30px;
-        margin: 0px;
       }
       li {
         display: inline;
@@ -86,17 +40,17 @@
       h2 {
         text-align: center;
         font-family: "Roboto";
+        transition: all 250ms ease;
       }
       p {
         text-align: center;
         font-size: 15px;
         font-family: 'Roboto';
+        transition: all 250ms ease;
       }
       img {
         width: 100%;
         box-sizing: border-box;
-        border-right: 1px solid #bbb;
-        border-left: 1px solid #bbb;
       }
       .legend {
         font-size: 15px;
@@ -119,18 +73,6 @@
         opacity: 0;
         transition: all 250ms ease;
         cursor: pointer;
-      }
-      .menuDropdown .navigationItem {
-        height: 0px;
-        padding: 0;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: white;
-        color: black;
-        transition: all 250ms ease;
-        box-shadow: 0px 0px 5px black;
       }
       .navigationItem:hover .menuDropdown {
         opacity: 1;
@@ -174,12 +116,6 @@
         border-right: none;
         border-left: none;
       }
-      .sticky {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        box-shadow: 0px 0px 20px black;
-      }
       .home {
         width: 59px;
         height: 40px;
@@ -203,56 +139,92 @@
          width: max-content;
          padding: 10px 10px;
        }
-       .navBarPlaceHolder {
-         position: relative;
-         height: 60px;
-       }
-      @media (max-width: 480px) {
-        h1 {
-          font-size: 30px;
-          height: 100px;
-        }
-        .navigation {
-          font-size: 16px;
-        }
-        .menuDropdown .navigationItem {
-          height: 20px;
-          padding: 5px;
-          font-size: 15px;
-        } 
-        .navigationItem {
-          height: 20px;
-        }
-        .home {
-          width: 39px;
-        }
-        .home img {
-          height: 25px;
-          width: 25px;
-       }
-       .navBarPlaceHolder {
-         position: relative;
-         height: 40px;
-       }
-       .navigationItem:hover .menuDropdown .navigationItem {
-        height: 20px;
-        padding: 10px 0;
-       }
-      }
       </style>
   </head>
 
   <body>
 
-    <div class="background"></div>
+<div class="header">
+  <h1 class="title">
+    Les bonnes adresses d'Evy
+  </h1>
+  <div class="logo">
+    &#127836;
+  </div>
+</div>
 
-    <h1>
-      <div class="backgroundh1"> </div>
-      Les bonnes adresses d'Evy<br>
-      &#127836;
-    </h1>
+<div id="navBarPlaceHolder" class="navBarPlaceHolder">
+  <div id="navBar" class="navBar">
+    <div class="navBarItem">
+      <div class="dropdown">
+        <div class="dropdownButton">
+          <img src="https://res.cloudinary.com/dvpcjyb48/image/upload/v1606652849/home-24px_qb2ojc.svg" alt="Accueil">
+        </div>
+        <div class="dropdownMenu">
+          <div class="dropdownItem" onclick="showAllRestaurants()">
+            Toutes les adresses
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navBarItem">
+      <div class="dropdown">
+        <div class="dropdownButton">
+          Américain
+        </div>
+        <div class="dropdownMenu">
+          <div class="dropdownItem" onclick="hideRestaurantsNot('peruvien')">
+            Péruvien
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navBarItem">
+      <div class="dropdown">
+        <div class="dropdownButton">
+          Asiatique
+        </div>
+        <div class="dropdownMenu">
+          <div class="dropdownItem" onclick="hideRestaurantsNot('chinois')">
+            Chinois
+          </div>
+          <div class="dropdownItem" onclick="hideRestaurantsNot('japonais')">
+            Japonais
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navBarItem">
+      <div class="dropdown">
+        <div class="dropdownButton">
+          Européen
+        </div>
+        <div class="dropdownMenu">
+          <div class="dropdownItem" onclick="hideRestaurantsNot('francais')">
+            Français
+          </div>
+          <div class="dropdownItem" onclick="hideRestaurantsNot('italien')">
+            Italien
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navBarItem">
+      <div class="dropdown">
+        <div class="dropdownButton">
+          Fusion
+        </div>
+        <div class="dropdownMenu">
+          <div class="dropdownItem" onclick="hideRestaurantsNot('francoJaponais')">
+            Franco-japonais          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <div id="navBarPlaceHolder" class="navBarPlaceHolder">
+<!--     <div id="navBarPlaceHolder" class="navBarPlaceHolder">
       <nav id="navBar" class="navBar">
         <ul class="navigation">
           <li class="dropdown navigationItem home">
@@ -262,32 +234,32 @@
             </ul>
           </li>
           <li class="dropdown navigationItem">
-            <span onclick="showMenuDropdown('americain')">Américain</span>
+            <div onclick="showMenuDropdown('americain')">Américain</div>
             <ul class="menuDropdown" id="americain" style="display: none;">
               <li class="navigationItem" id="peruvien" onclick="hideRestaurantsNotAndHideNavigationItem('peruvien','americain');">Péruvien</li>
             </ul>
           </li>
           <li class="dropdown navigationItem">
-            <span onclick="showMenuDropdown('asiatique')">Asiatique</span>
+            <div onclick="showMenuDropdown('asiatique')">Asiatique</div>
             <ul class="menuDropdown" id="asiatique" style="display: none;">
               <li class="navigationItem" id="chinois" onclick="hideRestaurantsNotAndHideNavigationItem('chinois','asiatique');">Chinois</li>
             </ul>
           </li>
           <li class="dropdown navigationItem">
-            <span onclick="showMenuDropdown('europeen')">Européen</span>
+            <div onclick="showMenuDropdown('europeen')">Européen</div>
             <ul class="menuDropdown" id="europeen" style="display: none;">
               <li class="navigationItem" id="francais" onclick="hideRestaurantsNotAndHideNavigationItem('francais','europeen')">Français</li>
             </ul>
           </li> 
           <li class="dropdown navigationItem">
-            <span onclick="showMenuDropdown('fusion')">Fusion</span>
+            <div onclick="showMenuDropdown('fusion')">Fusion</div>
             <ul class="menuDropdown" id="fusion" style="display: none;">
               <li class="navigationItem" id="francoJaponais" onclick="hideRestaurantsNotAndHideNavigationItem('francoJaponais','fusion');">Franco-japonais</li>
             </ul>
           </li> 
         </ul>
       </nav>
-    </div>
+    </div> -->
 
     <div id="scrollToTop" >
       <img src="https://res.cloudinary.com/dvpcjyb48/image/upload/v1606652850/to_top_qcnea0.png" alt="Retour vers le haut" onclick="scrollToTop()" title="Retour vers le haut">
@@ -472,95 +444,5 @@
 
   </body>
 
-  <script>
-
-  // Masquer tous les restaurants non className
-function hideRestaurantsNot(className) {
-
-  // Masquer tous les restaurants
-  var restaurants = document.getElementsByClassName("restaurant");
-  var i;
-  for (i = 0; i <restaurants.length; i++) {
-    restaurants[i].classList.add("hidden");
-    restaurants[i].classList.remove("show");
-  }
-
-  // Afficher les restaurants className
-  var restaurantsSelectionnes = document.getElementsByClassName(className);
-  var i;
-  for (i = 0; i <restaurantsSelectionnes.length; i++) {
-    restaurantsSelectionnes[i].classList.add("show");
-  }
-}
-
-//Get the button scrollToTop
-var scrollToTopButton = document.getElementById("scrollToTop");
-
-// When the user scrolls down 20px from the top of the document, show the button
-
-function scrollToTopButtonDisplay() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    scrollToTopButton.style.bottom = "10px";
-  } else {
-    scrollToTopButton.style.bottom = "-50px";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function scrollToTop() {
-// document.body.scrollTop = 0;
-// document.documentElement.scrollTop = 0;
-  window.scrollTo({
-    top : 0,
-    behavior : "smooth"
-  })
-}
-
-var navBarPlaceHolder = document.getElementById("navBarPlaceHolder");
-var sticky = navBarPlaceHolder.offsetTop;
-var navBar = document.getElementById("navBar");
-
-function stickNavbarToTop() {
-  if (window.pageYOffset >= sticky) {
-    navBar.classList.add("sticky")
-  } else {
-    navBar.classList.remove("sticky");
-  }
-}
-
-window.onscroll = function() {
-  scrollToTopButtonDisplay();
-  stickNavbarToTop();
-}
-
-function showAllRestaurants(id) {
-  
-  var allRestaurants = document.getElementsByClassName("restaurant");
-  var i;
-  for (i = 0; i <allRestaurants.length; i++) {
-    allRestaurants[i].classList.add("show");
-  }
-  hideMenuDropdown(id);
-}
-
-function hideMenuDropdown(id) {
-// Cache le navigation item dans le dropdown quand on clique sur l'id
-  var menuDropdown = document.getElementById(id);
-
-  menuDropdown.style.display = "none";
-}
-
-function showMenuDropdown(id) {
-// Affiche le menu dropwdown quand on clique sur le dropdown toggler
-  var menuDropdown = document.getElementById(id);
-
-  menuDropdown.style.display = "block";
-}
-
-function hideRestaurantsNotAndHideNavigationItem(className,id) {
-  hideRestaurantsNot(className);
-  hideMenuDropdown(id);
-}
-
- </script>
+  <script type="text/javascript" src="global.js"> </script>
 </html>
