@@ -99,3 +99,43 @@
   width: 100%;
   box-shadow: 0px 0px 20px black;
 }
+.goodAddress {
+  font-family: 'Roboto';
+  text-align: center;
+}
+.goodAddress .name {
+  font-size: 24px;
+}
+.goodAddress .speciality,
+.goodAddress .address,
+.goodAddress .phoneNumber,
+.goodAddress .website,
+.goodAddress .legend {
+  font-size: 15px;
+}
+.goodAddress .timetable {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+.goodAddress .picturesAndLegends {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 0;
+}
+.goodAddress .picture {
+  width: 100%;
+  box-sizing: border-box;
+  display: inline;
+  flex: 1;
+}
+p a:link {
+  color: #b83030;
+}
+p a:visited {
+  color: #1b8360;
+}
+p a:hover {
+  opacity: 0.7;
+}
