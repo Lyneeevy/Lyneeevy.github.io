@@ -157,3 +157,11 @@ p a:hover {
   opacity: 0.7;
   transition: all 250ms ease;
 }
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
