@@ -32,12 +32,10 @@ if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
 
 // When the user clicks on the button, scroll to the top of the document
 function scrollToTop() {
-// document.body.scrollTop = 0;
-// document.documentElement.scrollTop = 0;
-window.scrollTo({
-  top : 0,
-  behavior : "smooth"
-})
+  window.scrollTo({
+    top : 0,
+    behavior : "smooth"
+  })
 }
 
 var navBarPlaceHolder = document.getElementById("navBarPlaceHolder");

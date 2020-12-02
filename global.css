@@ -6,7 +6,7 @@
 }
 .header .title {
   color: #b83030;
-  font-family: 'Parisienne';
+  font-family: "Parisienne";
   text-align: center;
   font-size: 60px;
   margin: 0;
@@ -31,7 +31,7 @@
   display: flex;
   height: 60px;
   color: white;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 30px;
   align-items: center;
   justify-content: center;
@@ -70,7 +70,7 @@
   width: 100%;
   box-shadow: 0px 0px 5px black;
   color: black;
-  transition: all 250ms ease;
+  transition: opacity 250ms ease;
 }
 .navBar .navBarItem .dropdown:hover {
   background-color: #b83030;
@@ -80,6 +80,8 @@
   position: absolute;
   top: 100%;
   opacity: 0;
+  width: 100%;
+  transition: all 250ms ease;
 }
 .navBar .navBarItem .dropdown .dropdownItem {
   background-color: white;
@@ -88,6 +90,7 @@
   align-items: center;
   justify-content: center;
   height: 50px;
+  transition: all 125ms ease;
 }
 .navBar .navBarItem .dropdown .dropdownItem:hover {
   background-color: rgb(194, 193, 193);
@@ -100,7 +103,7 @@
   box-shadow: 0px 0px 20px black;
 }
 .goodAddress {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   text-align: center;
 }
 .goodAddress .name {
@@ -144,20 +147,13 @@ p a:visited {
 p a:hover {
   opacity: 0.7;
 }
-.scrollToTopButton img {
-  width: 50px;
-  height: 50px;
-  bottom: 10px;
+
+.scrollToTopButton {
+  position: fixed;
+  width: 35px;
+  height: 35px;
+  bottom: -50px;
   right: 10px;
   opacity: 0.7;
-  display: none;
-  border-right: none;
-}
-#scrollToTop {
-  position: fixed;
-  width: 25px;
-  height: 25px;
-  bottom: 50px;
-  right: 30px;
-  opacity: 0.7;
+  transition: all 250ms ease;
 }

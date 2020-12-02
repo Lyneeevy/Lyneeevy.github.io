@@ -5,33 +5,30 @@
   .header .title {
     font-size: 30px;
   }
-  .header .logo  {
+  .header .logo {
     font-size: 30px;
   }
   .navigation {
     font-size: 16px;
   }
-  .menuDropdown .navigationItem {
-    height: 20px;
-    padding: 5px;
-    font-size: 15px;
-  } 
-  .navigationItem {
-    height: 20px;
+
+  .navBar {
+    height: 40px;
   }
-  .home {
-    width: 39px;
+  .navBar .navBarItem {
+    height: 40px;
   }
-  .home img {
+  .navBar .navBarItem .dropdown .dropdownButton img {
     height: 25px;
     width: 25px;
- }
- .navBarPlaceHolder {
-   position: relative;
-   height: 40px;
- }
- .navigationItem:hover .menuDropdown .navigationItem {
-  height: 20px;
-  padding: 10px 0;
- }
+  }
+  .navBar .navBarItem .dropdown {
+    font-size: 16px;
+  }
+
+  .navBar .navBarItem .dropdown .dropdownItem {
+    height: 40px;
+    font-size: 16px;
+    text-align: center;
+  }
 }
