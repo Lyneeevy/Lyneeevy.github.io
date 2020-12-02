@@ -18,6 +18,10 @@
   .navBar .navBarItem {
     height: 40px;
   }
+  .navBar .navBarItem:first-child {
+    flex: none;
+    width: 40px;
+  }
   .navBar .navBarItem .dropdown .dropdownButton img {
     height: 25px;
     width: 25px;

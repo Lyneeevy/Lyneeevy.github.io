@@ -64,6 +64,7 @@ var allRestaurants = document.getElementsByClassName("goodAddress");
 var i;
 for (i = 0; i <allRestaurants.length; i++) {
   allRestaurants[i].classList.add("show");
+  allRestaurants[i].classList.remove("hidden");
 }
 // hideMenuDropdown(id);
 }
