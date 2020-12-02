@@ -11,7 +11,6 @@
   .navigation {
     font-size: 16px;
   }
-
   .navBar {
     height: 40px;
   }
@@ -29,10 +28,13 @@
   .navBar .navBarItem .dropdown {
     font-size: 16px;
   }
-
   .navBar .navBarItem .dropdown .dropdownItem {
     height: 40px;
     font-size: 16px;
     text-align: center;
+  }
+  .navBar .navBarItem:first-child .dropdown .dropdownMenu .dropdownItem {
+    height: 40px;
+    padding: 0px 10px;
   }
 }
