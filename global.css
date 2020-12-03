@@ -35,8 +35,8 @@
   font-size: 30px;
   align-items: center;
   justify-content: center;
-  border-right: 1px solid #bbb;
-  border-left: 1px solid #bbb;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
 }
 .navBar .navBarItem:first-child {
   flex: none;
@@ -143,8 +143,8 @@
   height: auto;
   box-sizing: border-box;
   display: inline;
-  border-right: 1px solid #bbb;
-  border-left: 1px solid #bbb;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
 }
 p a:link {
   color: #b83030;
