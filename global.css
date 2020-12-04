@@ -52,6 +52,10 @@
 .navBar .navBarItem:first-child .dropdown .dropdownMenu .dropdownItem {
   padding: 5px 10px;
 }
+.dropdownItem a {
+  text-decoration: none;
+  color: black;
+}
 .navBar .navBarItem .dropdown {
   position: relative;
   width: 100%;
@@ -155,7 +159,6 @@ p a:visited {
 p a:hover {
   opacity: 0.7;
 }
-
 .scrollToTopButton {
   position: fixed;
   width: 35px;
@@ -165,11 +168,9 @@ p a:hover {
   opacity: 0.7;
   transition: all 250ms ease;
 }
-
 .show {
   display: block;
 }
-
 .hidden {
   display: none;
 }
