@@ -139,6 +139,9 @@
   width: 100%;
   box-shadow: 0px 0px 20px black;
 }
+.scrollToTopButton {
+  cursor: pointer;
+}
 .goodAddress {
   font-family: "Roboto";
   text-align: center;
