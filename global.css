@@ -153,11 +153,6 @@
 .goodAddress .legend {
   font-size: 15px;
 }
-.goodAddress .timetable {
-  display: flex;
-  justify-content: center;
-  text-align: left;
-}
 .goodAddress .picturesAndLegends {
   display: flex;
   justify-content: space-evenly;
@@ -189,9 +184,15 @@
 }
 p a:link {
   color: #b83030;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 p a:visited {
   color: #1b8360;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 p a:hover {
   opacity: 0.7;
@@ -204,4 +205,34 @@ p a:hover {
   right: 10px;
   opacity: 0.7;
   transition: all 250ms ease;
+}
+.site {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+.facebook {
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+.instagram {
+  height: 20px;
+  width: 20px;
+}
+.goodAddress .website {
+  display: flex;
+  justify-content: center;
+}
+.goodAddress .phoneNumber img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  align-items: center;
+}
+.goodAddress .address img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  align-items: center;
 }
