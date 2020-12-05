@@ -168,6 +168,7 @@
   border-left: 1px solid white;
   display: flex;
   flex-direction: column;
+  max-width: 450px;
 }
 .goodAddress .picture img {
   width: 100%;
@@ -210,15 +211,19 @@ p a:hover {
   height: 20px;
   width: 20px;
   margin-right: 10px;
+  justify-content: center;
 }
 .facebook {
   height: 20px;
   width: 20px;
   margin-right: 10px;
+  justify-content: center;
+  text-align: center;
 }
 .instagram {
   height: 20px;
   width: 20px;
+  justify-content: center;
 }
 .goodAddress .website {
   display: flex;
