@@ -54,16 +54,3 @@
     background-attachment: scroll;
   }
 }
-
-@media (max-device-aspect-ratio: 3/4) {
-  height: calc(100vw * 1.333 );
-}
-@media (max-device-aspect-ratio: 2/3) {
-  height: calc(100vw * 1.5;
-}
-@media (max-device-aspect-ratio: 10/16) {
-  height: calc(100vw * 1.6);
-}
-@media (max-device-aspect-ratio: 9/16) {
-  height: calc(100vw * 1.778);
-}

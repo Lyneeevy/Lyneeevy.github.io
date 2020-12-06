@@ -36,6 +36,11 @@
     transform: rotate(-30deg);
   }
 }
+.body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
 .navBarPlaceHolder {
   position: relative;
   height: 60px;
