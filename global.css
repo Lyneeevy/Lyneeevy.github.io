@@ -147,7 +147,6 @@
   background-size: cover;
   filter: opacity(0.3);
   z-index: -50;
-  position: fixed;
 }
 .scrollToTopButton {
   cursor: pointer;
