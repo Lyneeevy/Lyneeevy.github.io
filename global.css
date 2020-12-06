@@ -138,7 +138,7 @@
 .background {
   height: 100vh;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   left: 0;
   background-position: center center;
@@ -240,6 +240,9 @@ p a:hover {
 .goodAddress .website {
   display: flex;
   justify-content: center;
+}
+.goodAddress .website a:hover {
+  opacity: 0.7;
 }
 .goodAddress .phoneNumber img {
   height: 20px;
