@@ -145,7 +145,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: opacity(0.3);
+  filter: opacity(0.15);
   z-index: -50;
 }
 .scrollToTopButton {
