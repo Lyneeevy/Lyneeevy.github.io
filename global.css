@@ -21,9 +21,10 @@ body {
   height: 80px;
   display: flex;
   align-items: center;
+  font-size: 24px;
 }
 .navBar a:not(:first-child) {
-  margin-left: 16px;
+  margin-left: 32px;
 }
 .container {
   height: calc(100vh - 80px); /*80px = navBar*/
@@ -33,4 +34,8 @@ body {
 }
 .title {
   font-size: 80px;
+}
+.description {
+  font-size: 18px;
+  text-align: right;
 }
