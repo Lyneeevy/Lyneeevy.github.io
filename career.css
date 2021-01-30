@@ -1,9 +1,3 @@
-body {
-  margin: 0;
-  padding: 0 48px;
-  font-family: "Roboto";
-  color: white;
-}
 .background img {
   position: fixed;
   height: 100vh;
@@ -13,7 +7,7 @@ body {
   object-fit: cover;
   object-position: center;
   z-index: -1;
-  filter: brightness(0.5);
+  filter: brightness(0.7);
 }
 .navBar {
   height: 80px;
@@ -58,13 +52,34 @@ body {
 }
 .container {
   height: calc(100vh - 80px); /*80px = navBar*/
+}
+.content {
   display: flex;
-  justify-content: flex-start;
 }
 .date {
   font-size: 80px;
 }
-.description {
-  font-size: 18px;
-  text-align: right;
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.companyName {
+  font-size: 80px;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: rgb(248, 194, 15);
+}
+.jobName {
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.jobTasks li {
+  list-style-position: inside;
+}
+.jobTasks {
+  margin: 0;
+  font-size: 24px;
 }

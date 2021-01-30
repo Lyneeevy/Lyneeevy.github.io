@@ -1,9 +1,3 @@
-body {
-  margin: 0;
-  padding: 0 48px;
-  font-family: "Roboto";
-  color: white;
-}
 .background img {
   position: fixed;
   height: 100vh;
