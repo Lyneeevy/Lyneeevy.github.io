@@ -24,13 +24,13 @@
   justify-content: center;
 }
 .companyName {
-  font-size: 80px;
+  font-size: 60px;
   font-weight: bold;
   margin-top: 50px;
   margin-bottom: 50px;
 }
 .jobName {
-  font-size: 60px;
+  font-size: 40px;
   font-weight: bold;
   margin-bottom: 50px;
 }
@@ -66,4 +66,13 @@
   background-image: url("./images/radio_button_checked-24px.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+.school {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.degree {
+  font-size: 40px;
+  margin-bottom: 50px;
 }
