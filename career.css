@@ -7,7 +7,7 @@
   object-fit: cover;
   object-position: center;
   z-index: -1;
-  filter: brightness(0.7);
+  filter: brightness(0.3);
 }
 .navBar {
   height: 80px;
@@ -51,7 +51,7 @@
   margin-left: 32px;
 }
 .container {
-  height: calc(100vh - 80px); /*80px = navBar*/
+  height: calc(100vh - 80px - 100px); /*80px = navBar 100px = footer*/
 }
 .content {
   display: flex;
@@ -82,4 +82,28 @@
 .jobTasks {
   margin: 0;
   font-size: 24px;
+}
+.pagination {
+  display: inline-block;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination a {
+  height: 24px;
+  padding: 8px 32px;
+  background-image: url("./images/radio_button_unchecked-24px.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.pagination .active {
+  background-image: url("./images/circle-24px.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.pagination a:hover:not(.active) {
+  background-image: url("./images/radio_button_checked-24px.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
