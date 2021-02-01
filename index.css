@@ -12,8 +12,26 @@
 .container {
   height: calc(100vh - 80px); /*80px = navBar*/
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
+}
+.content {
+  animation-duration: 6s;
+  animation-name: slidein;
+  animation-fill-mode: forwards;
+  margin-top: 160px;
+  min-width: 530px;
+}
+@keyframes slidein {
+  from {
+    margin-right: 500px;
+    opacity: 0;
+  }
+
+  to {
+    margin-right: 0px;
+    opacity: 1;
+  }
 }
 .title {
   font-size: 80px;

@@ -13,11 +13,16 @@
   <div class="background">
     <img src="https://res.cloudinary.com/dvpcjyb48/image/upload/v1611996230/IMG_20200315_185916_962_brchxy.jpg" />
   </div>
-  <nav class=" navBar">
-    <div class="links">
-      <a class="current" href="./index.html">Accueil</a>
-      <a href="./career-5.html">Parcours professionnel</a>
-      <a>Projets personnels</a>
+  <nav id="sideNav" class="sideNav">
+    <ul>
+      <li><a class="active" href="./index.html">Accueil</a></li>
+      <li><a href="./career-5.html">Parcours professionnel</a></li>
+      <li><a>Projets personnels</a></li>
+    </ul>
+  </nav>
+  <nav class="navBar">
+    <div class="navigation">
+      <button id="menuButton" onclick="toggleSideNav()"> <img class="menuIcon" src="./images/menu-24px.svg"> </button>
     </div>
     <div class="contact">
       <a class="gmail" href="mailto:evelyne.phich@gmail.com"> <img src="./images/email-24px.svg" alt="Email" /></a>
@@ -36,6 +41,7 @@
       </div>
     </div>
   </div>
+  <script src="index.js"></script>
 </body>
 
 </html>

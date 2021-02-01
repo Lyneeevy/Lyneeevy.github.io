@@ -13,11 +13,16 @@
   <div class="background">
     <img src="https://res.cloudinary.com/dvpcjyb48/image/upload/v1612121258/Fiducial%20Expertise.jpg" />
   </div>
+  <nav id="sideNav" class="sideNav">
+    <ul>
+      <li><a href="./index.html">Accueil</a></li>
+      <li><a class="active" href="./career-5.html">Parcours professionnel</a></li>
+      <li><a>Projets personnels</a></li>
+    </ul>
+  </nav>
   <nav class="navBar">
-    <div class="links">
-      <a href="./index.html">Accueil</a>
-      <a class="current" href="./career-5.html">Parcours professionnel</a>
-      <a>Projets personnels</a>
+    <div class="navigation">
+      <button id="menuButton" onclick="toggleSideNav()"> <img class="menuIcon" src="./images/menu-24px.svg"> </button>
     </div>
     <div class="contact">
       <a class="gmail" href="mailto:evelyne.phich@gmail.com"> <img src="./images/email-24px.svg" alt="Email" /></a>
@@ -54,6 +59,7 @@
     <a href="./career-2.html"></a>
     <a href="./career-1.html"></a>
   </footer>
+  <script src="index.js"></script>
 </body>
 
 </html>
