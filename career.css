@@ -43,6 +43,11 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
 }
 .pagination a {
   height: 24px;
