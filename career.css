@@ -1,19 +1,12 @@
-.background img {
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-  object-position: center;
-  z-index: -1;
-  filter: brightness(0.2);
+body {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  backdrop-filter: brightness(20%);
 }
 .container {
   height: calc(100vh - 80px - 100px); /*80px = navBar 100px = footer*/
-}
-.content {
-  display: flex;
 }
 .date {
   font-size: 80px;
@@ -75,4 +68,43 @@
 .degree {
   font-size: 40px;
   margin-bottom: 50px;
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .date {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .date {
+    font-size: 24px;
+  }
+  .companyName {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  .jobName {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  .jobTasks {
+    font-size: 14px;
+  }
+  .school {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  .degree {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
 }
