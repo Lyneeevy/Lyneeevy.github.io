@@ -1,4 +1,4 @@
-// We listen to the resize event
+// Script to fix the viewport height on mobile
 window.addEventListener("resize", () => {
   // We execute the same script as before
   let vh = window.innerHeight * 0.01;
