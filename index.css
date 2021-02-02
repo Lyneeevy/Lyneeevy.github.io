@@ -1,9 +1,6 @@
-body {
+.background {
   background-image: url(https://res.cloudinary.com/dvpcjyb48/image/upload/v1611996230/IMG_20200315_185916_962_brchxy.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  filter: brightness(0.8);
 }
 .container {
   height: calc(100vh - 80px); /*80px = navBar*/
@@ -38,7 +35,7 @@ body {
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
-  body {
+  .background {
     background-image: url("https://res.cloudinary.com/dvpcjyb48/image/upload/c_scale,w_1024/v1611996230/IMG_20200315_185916_962_brchxy.jpg");
   }
   .content {
@@ -51,7 +48,7 @@ body {
 }
 
 @media (max-width: 480px) {
-  body {
+  .background {
     background-image: url("https://res.cloudinary.com/dvpcjyb48/image/upload/c_scale,w_480/v1612280689/20200314_163344_imva84.jpg");
   }
   .container {

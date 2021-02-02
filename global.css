@@ -29,6 +29,18 @@
     /* Corrects inability to style clickable `input` types in iOS */
     -webkit-appearance: none;
   }
+  .background {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+  filter: brightness(0.2);
+}
   .menuButton {
     height: 32px;
     opacity: 0.7;
