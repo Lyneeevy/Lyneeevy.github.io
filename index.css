@@ -4,7 +4,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  backdrop-filter: brightness(60%);
 }
 .container {
   height: calc(100vh - 80px); /*80px = navBar*/
