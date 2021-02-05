@@ -2,6 +2,17 @@
   background-image: url("https://res.cloudinary.com/dvpcjyb48/image/upload/v1611996230/IMG_20200315_185916_962_brchxy.jpg");
   filter: brightness(0.8);
 }
+.backgroundClosingSideNav {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  top: 80px;
+  left: 322px;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+}
 .container {
   height: calc(100vh - 80px); /*80px = navBar*/
   display: flex;
