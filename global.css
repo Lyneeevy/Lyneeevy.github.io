@@ -1,35 +1,35 @@
-  body {
-    margin: 0;
-    padding: 0 48px;
-    font-family: "Roboto";
-    color: white;
-  }
-  button {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-    cursor: pointer;
-    outline: none;
+body {
+  margin: 0;
+  padding: 0 48px;
+  font-family: "Roboto";
+  color: white;
+}
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  cursor: pointer;
+  outline: none;
 
-    background: transparent;
+  background: transparent;
 
-    /* inherit font & color from ancestor */
-    color: inherit;
-    font: inherit;
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
 
-    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-    line-height: normal;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
 
-    /* Corrects font smoothing for webkit */
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
 
-    /* Corrects inability to style clickable `input` types in iOS */
-    -webkit-appearance: none;
-  }
-  .background {
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+.background {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -41,77 +41,90 @@
   z-index: -1;
   filter: brightness(0.2);
 }
-  .menuButton {
-    height: 32px;
-    opacity: 0.7;
-    transition: opacity ease-in-out 125ms;
-  }
-  .menuIcon {
-    height: 32px;
-    width: 32px;
-  }
-  .navBar {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    justify-content: space-between;
-  }
-  .navBar a {
-    opacity: 0.7;
-    color: inherit;
-    text-decoration: none;
-    transition: opacity ease-in-out 125ms;
-  }
-  .navBar a img {
-    height: 32px;
-    width: 32px;
-  }
-  .navBar .contact {
-    display: flex;
-  }
-  .navBar .contact a:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
-  .navBar a:not(:first-child) {
-    margin-left: 32px;
-  }
-  .sideNav {
-    height: 100vh;
-    width: 320px;
-    position: absolute;
-    left: -322px;
-    top: 0px;
-    background-color: rgb(2, 2, 51);
-    transition: left ease-in-out 250ms;
-    box-shadow: 2px 1px 5px black;
-    z-index: 1;
-  }
-  .sideNav.isOpen {
-    left: 0px;
-  }
-  .sideNav ul {
-    list-style-type: none;
-    padding: 0px;
-  }
-  .sideNav ul li {
-    margin: 5px;
-  }
-  .sideNav li a {
-    text-decoration: none;
-    display: block;
-    color: white;
-    padding: 12px 24px;
-    font-size: 24px;
-  }
-  .sideNav li a.active {
-    background-color: rgb(177, 209, 247);
-    color: rgb(2, 2, 51);
-  }
-  li a:hover:not(.active) {
-    background-color: #ffffffee;
-    transition: 0.3s;
-    color: rgb(2, 2, 51);
-  }
+.backgroundClosingSideNav {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  top: 0px;
+  left: 322px;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+}
+.menuButton {
+  height: 32px;
+  opacity: 0.7;
+  transition: opacity ease-in-out 125ms;
+}
+.menuIcon {
+  height: 32px;
+  width: 32px;
+}
+.navBar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  justify-content: space-between;
+}
+.navBar a {
+  opacity: 0.7;
+  color: inherit;
+  text-decoration: none;
+  transition: opacity ease-in-out 125ms;
+}
+.navBar a img {
+  height: 32px;
+  width: 32px;
+}
+.navBar .contact {
+  display: flex;
+}
+.navBar .contact a:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.navBar a:not(:first-child) {
+  margin-left: 32px;
+}
+.sideNav {
+  height: 100vh;
+  width: 320px;
+  position: absolute;
+  left: -322px;
+  top: 0px;
+  background-color: rgb(2, 2, 51);
+  transition: left ease-in-out 250ms;
+  box-shadow: 2px 1px 5px black;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.sideNav.isOpen {
+  left: 0px;
+}
+.sideNav ul {
+  list-style-type: none;
+  padding: 0px;
+}
+.sideNav ul li {
+  margin: 5px;
+}
+.sideNav li a {
+  text-decoration: none;
+  display: block;
+  color: white;
+  padding: 12px 24px;
+  font-size: 24px;
+}
+.sideNav li a.active {
+  background-color: rgb(177, 209, 247);
+  color: rgb(2, 2, 51);
+}
+li a:hover:not(.active) {
+  background-color: #ffffffee;
+  transition: 0.3s;
+  color: rgb(2, 2, 51);
 }

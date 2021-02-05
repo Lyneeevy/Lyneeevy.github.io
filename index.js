@@ -5,7 +5,12 @@ window.addEventListener("resize", () => {
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 });
 
-function toggleSideNav() {
+function openSideNav() {
   let sideNav = document.getElementById("sideNav");
   sideNav.classList.add("isOpen");
+}
+
+function closeSideNav() {
+  let sideNav = document.getElementById("sideNav");
+  sideNav.classList.remove("isOpen");
 }
